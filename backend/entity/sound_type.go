@@ -3,8 +3,8 @@ package entity
 import "gorm.io/gorm"
 
 type SoundType struct {
-  gorm.Model
-  Name  string
+	gorm.Model
+	Name string
 
-  Sounds  []Sound `gorm:"foreignKey:SoundTypeID"`
+	Sounds []Sound `gorm:"foreignKey:SoundTypeID"`
 }

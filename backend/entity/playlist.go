@@ -3,11 +3,11 @@ package entity
 import "gorm.io/gorm"
 
 type Playlist struct {
-  gorm.Model
-  Title string
+	gorm.Model
+	Title string
 
-  MemberID  *uint
-  Member  Member  `gorm:"foreignKey:MemberID"`
+	MemberID *uint
+	Member   Member `gorm:"foreignKey:MemberID"`
 
-  SoundPlaylists  []SoundPlaylist `gorm:"foreignKey:PlaylistID"`
+	Sound []Sound `gorm:"many2many:sound_playlist;"`
 }
